@@ -7,6 +7,8 @@
 <body>
   <a-scene ar-hit-test="target:#my-object">
     <a-gltf-model id="my-object" src="SantaClaus.glb" scale="0.1 0.1 0.1"></a-gltf-model>
+    <a-entity id="leftHand" hand-tracking-controls="hand: left;"></a-entity>
+    <a-entity id="rightHand" hand-tracking-controls="hand: right;"></a-entity>
   </a-scene>
 </body>
 </html>
