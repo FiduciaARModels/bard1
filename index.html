@@ -9,27 +9,8 @@
     <a-gltf-model id="my-object" src="lv.glb" scale="0.01 0.01 0.01"></a-gltf-model>
     <a-entity id="leftHand" hand-tracking-controls="hand: left;"></a-entity>
     <a-entity id="rightHand" hand-tracking-controls="hand: right;"></a-entity>
-    <a-entity position="0 0 0">
-      <button slot="ar-button">Rotate camera</button>
-    </a-entity>
   </a-scene>
 
-  <script>
-    const button = document.querySelector('[slot="ar-button"]');
-button.addEventListener('click', () => {
-  // Get the current rotation of the AR camera.
-  const cameraRotation = camera.quaternion;
-
-  // Create a new quaternion that represents a 90 degree rotation around the y-axis.
-  const newRotation = new THREE.Quaternion();
-  newRotation.setFromAxisAngle(new THREE.Vector3(0, 1, 0), Math.PI / 2);
-
-  // Multiply the new rotation by the current rotation to get the final rotation.
-  cameraRotation.multiplyQuaternions(newRotation, cameraRotation);
-
-  // Set the AR camera's rotation to the final rotation.
-  camera.quaternion.copy(cameraRotation);
-});
-  </script>
+ 
 </body>
 </html>
