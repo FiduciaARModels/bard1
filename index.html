@@ -3,10 +3,13 @@
 <head>
   <title>A-Frame AR Hit Test Example</title>
   <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras/dist/aframe-extras.min.js"></script>
 </head>
 <body>
   <a-scene ar-hit-test="target:#my-object">
-    <a-gltf-model id="my-object" src="SantaClaus.glb" scale="0.001 0.001 0.001"></a-gltf-model>
+    <a-gltf-model id="my-object" src="SantaClaus.glb" scale="0.009 0.009 0.009">
+      <xrextras-hold-drag></xrextras-hold-drag>
+    </a-gltf-model>
   </a-scene>
 </body>
 </html>
