@@ -4,6 +4,12 @@
   <title>A-Frame AR Hit Test Example</title>
   <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
   <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/a-frame-ar.min.js"></script>
+  <style>
+    a-scene > a-entity[position="0 0 0"] button {
+      background-color: red;
+      color: white;
+    }
+  </style>
 </head>
 <body>
   <a-scene ar-hit-test="target:#my-object">
@@ -15,6 +21,10 @@
     </a-entity>
   </a-scene>
 
- 
+  <script>
+    document.querySelector('a-scene > a-entity[position="0 0 0"] button').addEventListener('click', function() {
+      console.log('Button clicked!');
+    });
+  </script>
 </body>
 </html>
