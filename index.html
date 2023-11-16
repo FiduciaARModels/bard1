@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-  <script src="https://cdn.jsdelivr.net/npm/cordova@12.1.1/dist/cordova.js"></script>
-<title>Youtube</title>
-</head>
-<body>
-<script>
-  var link = "youtube.com";
-  var appId = "youtube-watch-listen-stream/id544007664"
-cordova.plugins.availability.isAvailable({
-    name: appId,
-    scheme: link
-}, function(available) {
-    if (available) {
+  <meta charset="ISO-8859-1">
+  <script>
+    var link = "youtube.com";
+    var appId = "youtube-watch-listen-stream/id544007664";
+
+    cordova.plugins.availability.isAvailable({
+      name: appId,
+      scheme: link
+    }, function(available) {
+      if (available) {
         // The YouTube app is installed, open the video
         window.location.href = link;
-    } else {
+      } else {
         // The YouTube app is not installed, open the App Store URL
         window.location.href = "https://apps.apple.com/app/"+link;
-    }
-});
-  /*const isAppInstalled = window.navigator.canOpenURL(link);
-  alert(isAppInstalled);
-  if (isAppInstalled) {
-    //window.location.href = link;
-    window.location.replace(link);
-  } else {
-    //window.location.href = "https://apps.apple.com/app/" + appId;
-    window.location.replace("https://apps.apple.com/app/" + appId);
-  }*/
-</script>
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/cordova@12.1.1/dist/cordova.js"></script>
+  <title>Youtube</title>
+</head>
+<body>
+
 </body>
 </html>
