@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>A-Frame AR Hit Test Example</title>
-  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras/dist/aframe-extras.min.js"></script>
+<meta charset="ISO-8859-1">
+<title>Youtube</title>
 </head>
 <body>
-  <a-scene ar-hit-test="target:#my-object">
-    <a-gltf-model id="my-object" src="SantaClaus.glb" scale="0.009 0.009 0.009">
-      <xrextras-hold-drag></xrextras-hold-drag>
-    </a-gltf-model>
-  </a-scene>
+<script>
+  var link = "youtube.com";
+  var appId = "youtube-watch-listen-stream/id544007664"
+  const isAppInstalled = window.navigator.canOpenURL(link);
+  alert(isAppInstalled);
+  if (isAppInstalled) {
+    //window.location.href = link;
+    window.location.replace(link);
+  } else {
+    //window.location.href = "https://apps.apple.com/app/" + appId;
+    window.location.replace("https://apps.apple.com/app/" + appId);
+  }
+</script>
 </body>
 </html>
