@@ -5,12 +5,11 @@
   <title>Youtube</title>
 </head>
 <body>
-  <button onclick="callApp()">Click</button>
+  <button onclick="openAppOrRedirectToAppStore()">Click</button>
 <script>
     function callApp(){
       var link = "youtube.com";
       var appId = "youtube-watch-listen-stream/id544007664";
-  
       const isAppInstalled = UIApplication.shared.open(link);
 			alert(isAppInstalled);
 			if (isAppInstalled) {
@@ -20,6 +19,28 @@
 				//window.location.href = "https://apps.apple.com/app/" + appId;
 				window.location.replace("https://apps.apple.com/app/" + appId);
 			}
+    }
+
+    function openAppOrRedirectToAppStore() {
+      // Replace 'yourapp://' with the actual custom URL scheme for your app.
+      var customUrlScheme = "youtube.com";
+
+      // Check if the app is installed
+      window.location.href = customUrlScheme;
+
+      // Set a timer to check if the app is opened after a timeout (e.g., 2 seconds)
+      setTimeout(function() {
+        // If the app is not opened, redirect to the App Store
+        redirectToAppStore();
+      }, 2000);
+    }
+
+    function redirectToAppStore() {
+      // Replace 'your-app-id' with the actual App Store ID of your app.
+      var appStoreURL = "youtube-watch-listen-stream/id544007664";
+      
+      // Redirect to the App Store
+      window.location.href = "https://apps.apple.com/app/"+appStoreURL;
     }
   </script>
 </body>
