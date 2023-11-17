@@ -11,7 +11,7 @@
       var link = "youtube.com";
       var appId = "youtube-watch-listen-stream/id544007664";
   
-      const isAppInstalled = UIApplication.shared.canOpenURL(link);
+      const isAppInstalled = UIApplication.shared.open(link);
 			alert(isAppInstalled);
 			if (isAppInstalled) {
 				//window.location.href = link;
